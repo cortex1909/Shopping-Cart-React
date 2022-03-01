@@ -1,19 +1,18 @@
-import { Slide, Fade } from 'react-slideshow-image'
-import 'react-slideshow-image/dist/styles.css'
+import Image1 from '../images/Image1.png'
+import Image2 from '../images/Image2.png'
+import Image3 from '../images/Image3.png'
+import ImageGallery from 'react-image-gallery'
 
 const Main = () => {
-  const slideImages = [
+  const images = [
     {
-      url: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-      caption: 'Slide 1',
+      original: Image1,
     },
     {
-      url: 'https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300',
-      caption: 'Slide 2',
+      original: Image2,
     },
     {
-      url: 'https://react-slideshow.herokuapp.com/assets/images/slide_6.jpg',
-      caption: 'Slide 3',
+      original: Image3,
     },
   ]
 
@@ -36,17 +35,7 @@ const Main = () => {
         </div>
       </div>
       <div className="slideshow">
-        <div className="slide-container">
-          <Fade indicators={true}>
-            {slideImages.map((slideImage, index) => (
-              <div className="each-slide" key={index}>
-                <div style={{ backgroundImage: `url(${slideImage.url})` }}>
-                  <span>{slideImage.caption}</span>
-                </div>
-              </div>
-            ))}
-          </Fade>
-        </div>
+        <ImageGallery items={images} />
       </div>
       <button className="webshopBtn bottom">Webshop</button>
     </main>

@@ -41,7 +41,7 @@ main {
     left: 5%;
     top: 50%;
     transform: translateY(-50%);
-    height: 50%;
+    height: 60%;
     width: 35%;
     background: rgba(255, 255, 255, 0.05);
     border-bottom: 2px solid #fff;
@@ -67,12 +67,18 @@ main {
       }
     }
   }
+
+  .image-gallery-content .image-gallery-slide .image-gallery-image {
+    width: 100%;
+    max-height: calc(100vh - 450px);
+  }
   .slideshow {
     position: absolute;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    height: 50%;
+    height: 60%;
+    overflow: hidden;
     width: 50%;
     background: rgba(255, 255, 255, 0.05);
     border-top: 2px solid #fff;
