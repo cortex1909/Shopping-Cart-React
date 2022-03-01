@@ -1,0 +1,136 @@
+{
+  "interior": {
+    "10001": {
+      "id": 10001,
+      "name": "Sonax Multistar 1L",
+      "description": "All purpose cleaner, possible dilution 1:100 to clean",
+      "price": 13,
+      "image": ""
+    },
+    "10002": {
+      "id": 10002,
+      "name": "Sonax XTREME Alcantara Cleaner",
+      "description": "Cleans alcantara, like new!",
+      "price": 8,
+      "image": ""
+    },
+    "10003": {
+      "id": 10003,
+      "name": "Sonax Plastic Care",
+      "description": "Makes your plastics matt finish and dust free!",
+      "price": 18,
+      "image": ""
+    },
+    "10004": {
+      "id": 10004,
+      "name": "Sonax Leather Cleaner",
+      "description": "Cleans leather, like new!",
+      "price": 20,
+      "image": ""
+    },
+    "10005": {
+      "id": 10005,
+      "name": "California Car Scents",
+      "description": "Mmmmm yummy smell!",
+      "price": 5,
+      "image": ""
+    }
+  },
+  "exterior": {
+    "20001": {
+      "id": 20001,
+      "name": "Clay Sponge",
+      "description": "Remove all embedded dirt from paint",
+      "price": 15,
+      "image": ""
+    },
+    "20002": {
+      "id": 20002,
+      "name": "Meguiar Iron Remover",
+      "description": "Remove iron particles!",
+      "price": 25,
+      "image": ""
+    },
+    "20003": {
+      "id": 20003,
+      "name": "CarPro Reset",
+      "description": "Get your protection back!",
+      "price": 20,
+      "image": ""
+    },
+    "20004": {
+      "id": 20004,
+      "name": "Drying Towel",
+      "description": "Dry your car without scratches!",
+      "price": 25,
+      "image": ""
+    },
+    "20005": {
+      "id": 20005,
+      "name": "CarPro CQuartz 3.0",
+      "description": "Best ceramic coating!!",
+      "price": 80,
+      "image": ""
+    }
+  },
+  "brushes": {
+    "30001": {
+      "id": 30001,
+      "name": "Set of Brushes",
+      "description": "5 brushes in one package!",
+      "price": 40,
+      "image": ""
+    },
+    "30002": {
+      "id": 30002,
+      "name": "Interior brush",
+      "description": "For small areas!",
+      "price": 8,
+      "image": ""
+    },
+    "30003": {
+      "id": 30003,
+      "name": "Leather brush",
+      "description": "For leather usage!",
+      "price": 5,
+      "image": ""
+    },
+    "30004": {
+      "id": 30004,
+      "name": "Sonaxc Pet Hair brush",
+      "description": "Cleans leather, like new!",
+      "price": 20,
+      "image": ""
+    },
+    "30005": {
+      "id": 30005,
+      "name": "Detailing Swab",
+      "description": "For those tiny areas!",
+      "price": 5,
+      "image": ""
+    }
+  },
+  "machines": {
+    "40001": {
+      "id": 40001,
+      "name": "Flex XFE 7-15 150",
+      "description": "Orbital machine",
+      "price": 500,
+      "image": ""
+    },
+    "40002": {
+      "id": 40002,
+      "name": "Proxxon Rotation",
+      "description": "For small areas!",
+      "price": 200,
+      "image": ""
+    },
+    "40003": {
+      "id": 40003,
+      "name": "Rupes Rotation",
+      "description": "Makes your correction faster!",
+      "price": 400,
+      "image": ""
+    }
+  }
+}

@@ -2,6 +2,7 @@ import Image1 from '../images/Image1.png'
 import Image2 from '../images/Image2.png'
 import Image3 from '../images/Image3.png'
 import ImageGallery from 'react-image-gallery'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
   const images = [
@@ -37,7 +38,9 @@ const Main = () => {
       <div className="slideshow">
         <ImageGallery items={images} />
       </div>
-      <button className="webshopBtn bottom">Webshop</button>
+      <Link to="/webshop">
+        <button className="webshopBtn bottom">Webshop</button>
+      </Link>
     </main>
   )
 }

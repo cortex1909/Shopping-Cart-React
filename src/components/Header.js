@@ -1,13 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Header({ appName }) {
+function Header({ appName, linkTo }) {
+  const link = `/${linkTo}`
   return (
     <header>
       <nav>
         <p>
           cortex19 <strong>{appName}</strong>
         </p>
-        <button className="webshopBtn">Webshop</button>
+        <Link to={linkTo === 'webshop' ? link : `/`}>
+          <button className="webshopBtn">{linkTo}</button>
+        </Link>
       </nav>
     </header>
   )

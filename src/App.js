@@ -4,10 +4,10 @@ import Footer from './components/Footer'
 import Main from './Pages/Main'
 
 const App = () => {
-  const appName = 'Shopping Cart'
+  const appName = 'Shopping Cart Homepage'
   return (
     <>
-      <Header appName={appName} />
+      <Header appName={appName} linkTo={'webshop'} />
       <Main />
       <Footer />
     </>
