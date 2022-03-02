@@ -23,3 +23,21 @@
     width: 100%;
   }
 }
+
+.btn {
+  background: none;
+  width: 150px;
+  height: 40px;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  &.buy {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+  }
+}
