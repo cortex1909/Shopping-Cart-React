@@ -86,7 +86,7 @@
       "name": "Interior brush",
       "description": "For small areas!",
       "price": 8,
-      "image": "./images/products/brushes/set.png"
+      "image": "./images/products/brushes/small.png"
     },
     {
       "id": 30003,

@@ -1,6 +1,9 @@
 import React from 'react'
 import Item from './Item'
+import ShowCart from './ShowCart'
 import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const WebShopContent = ({
   interiorContent,
@@ -9,9 +12,60 @@ const WebShopContent = ({
   machinesContent,
 }) => {
   const [listing, setListing] = useState('all')
+  /* const [cart, setCart] = useState('No products in cart!') */
+  const [cart, setCart] = useState([
+    {
+      id: 10001,
+      name: 'SMS1L',
+      quant: 3,
+      price: 13,
+    },
+    {
+      id: 20001,
+      name: 'clay sponge',
+      quant: 5,
+      price: 15,
+    },
+  ])
+  const [showCart, setshowCart] = useState(false)
 
   const toggleListing = (listing) => {
     setListing(listing)
+  }
+
+  const quantChange = (e, eID) => {
+    const { name, value } = e.target
+    const numberValue = parseInt(value)
+
+    const index = cart.findIndex((item) => item.id === eID)
+    const item = cart[index]
+    const updatedItem = {
+      ...item,
+      [name]: numberValue,
+    }
+    const updatedArray = [...cart]
+    updatedArray[index] = updatedItem
+    setCart(updatedArray)
+
+    /*
+    const newState = cart.find((item) => {
+      if (item.id === eID) {
+        return {
+          ...item,
+          [name]: numberValue,
+        }
+      }
+    })
+    console.log(newState)
+     setCart((prevState) => ({
+      ...prevState,
+      newState,
+    })) 
+    */
+  }
+
+  const deleteItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id))
   }
 
   const ternaryStyling = {
@@ -56,6 +110,9 @@ const WebShopContent = ({
         >
           Machines
         </li>
+        <li onClick={() => setshowCart(!showCart)}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </li>
       </ul>
       {(listing === 'all' || listing === 'interior') && (
         <div className="itemBox">
@@ -84,6 +141,14 @@ const WebShopContent = ({
             <Item item={item} key={item.id} />
           ))}
         </div>
+      )}
+      {showCart && (
+        <ShowCart
+          cart={cart}
+          quantChange={quantChange}
+          deleteItem={deleteItem}
+          toggleCart={() => setshowCart(!showCart)}
+        />
       )}
     </div>
   )

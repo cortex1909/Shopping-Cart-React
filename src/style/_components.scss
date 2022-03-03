@@ -40,4 +40,9 @@
     transform: translateX(-50%);
     margin-bottom: 10px;
   }
+  &.hide {
+    border-image: linear-gradient(45deg, rgb(255, 0, 0), rgb(99, 53, 53)) 1;
+    width: 40px;
+    margin-left: 25px;
+  }
 }
