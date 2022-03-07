@@ -479,32 +479,62 @@ footer .text {
 
 .showCart .cartContainer {
   max-width: 90%;
-  min-width: 600px;
+  min-width: 700px;
 }
 
 .showCart .cartContainer h2 {
   color: #fff;
   text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 2rem;
-  text-align: center;
+  font-size: 3rem;
   margin-bottom: 15px;
   text-shadow: 1px 2px 5px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.showCart .cartContainer .totalPrice {
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  float: right;
 }
 
 .showCart .cartContainer .cartListing {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+}
+
+.showCart .cartContainer .cartListing .cartItem {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.showCart .cartContainer .cartListing .cartPrice {
+  width: 250px;
 }
 
 .showCart .cartContainer .cartListing .cartPrice input {
-  width: 50px;
-  margin-right: 10px;
+  width: 40px;
 }
 
 .showCart .cartContainer .cartListing .cartDelete {

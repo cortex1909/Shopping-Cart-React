@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ShowCart = ({ cart, quantChange, deleteItem, toggleCart }) => {
+  let totalPrice = 0
   return (
     <div className="showCart">
       <div className="cartContainer">
@@ -10,32 +11,32 @@ const ShowCart = ({ cart, quantChange, deleteItem, toggleCart }) => {
             &#x2715;
           </button>
         </h2>
-        <div className="cartListing">
-          <div className="cartItem">
-            {cart.map((item) => (
-              <div key={item.id}>{item.name}</div>
-            ))}
-          </div>
-          <div className="cartPrice">
-            {cart.map((item) => (
-              <div key={item.id}>
+        {cart.map((item) => (
+          <div className="cartListing" key={item.id}>
+            <div className="cartItem">
+              <div>{item.name}</div>
+            </div>
+
+            <div className="cartPrice">
+              <div>
                 <input
                   type="number"
                   name="quant"
                   value={item.quant}
                   onChange={(e) => quantChange(e, item.id)}
+                  totalprice={(totalPrice += item.quant * item.price)}
                 />
                 &#x2715; {item.price} € = {item.quant * item.price} €
               </div>
-            ))}
+            </div>
+
+            <div className="cartDelete">
+              <div onClick={() => deleteItem(item.id)}>&#x2715;</div>
+            </div>
           </div>
-          <div className="cartDelete">
-            {cart.map((item) => (
-              <div key={item.id} onClick={() => deleteItem(item.id)}>
-                &#x2715;
-              </div>
-            ))}
-          </div>
+        ))}
+        <div className="totalPrice">
+          <u>Total amount:</u> {totalPrice} €
         </div>
       </div>
     </div>

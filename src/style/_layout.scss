@@ -220,27 +220,38 @@ footer {
   }
   .cartContainer {
     max-width: 90%;
-    min-width: 600px;
+    min-width: 700px;
     h2 {
       color: #fff;
       text-transform: uppercase;
-      text-decoration: underline;
-      font-size: 2rem;
-      text-align: center;
+      font-size: 3rem;
       margin-bottom: 15px;
       text-shadow: 1px 2px 5px rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .totalPrice {
+      color: white;
+      font-size: 2rem;
+      text-transform: uppercase;
+      float: right;
     }
     .cartListing {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: white;
       display: flex;
-      justify-content: space-around;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid white;
+      margin-bottom: 5px;
       .cartItem {
+        flex-grow: 1;
       }
       .cartPrice {
+        width: 250px;
         input {
-          width: 50px;
-          margin-right: 10px;
+          width: 40px;
         }
       }
       .cartDelete {

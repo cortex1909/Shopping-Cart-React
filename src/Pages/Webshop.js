@@ -29,7 +29,7 @@ const Webshop = () => {
   return (
     <>
       <Header appName={'Webshop'} linkTo={'Homepage'} />
-      {(interior, exterior, brushes, machines) && (
+      {interior && exterior && brushes && machines && (
         <WebShopContent
           interiorContent={interior}
           exteriorContent={exterior}

@@ -12,25 +12,33 @@ const WebShopContent = ({
   machinesContent,
 }) => {
   const [listing, setListing] = useState('all')
-  /* const [cart, setCart] = useState('No products in cart!') */
-  const [cart, setCart] = useState([
-    {
-      id: 10001,
-      name: 'SMS1L',
-      quant: 3,
-      price: 13,
-    },
-    {
-      id: 20001,
-      name: 'clay sponge',
-      quant: 5,
-      price: 15,
-    },
-  ])
+  const [cart, setCart] = useState([])
   const [showCart, setshowCart] = useState(false)
 
   const toggleListing = (listing) => {
     setListing(listing)
+  }
+
+  const addToCart = (prop) => {
+    const index = cart.findIndex((item) => item.id === prop.id)
+    if (index !== -1) {
+      const item = cart[index]
+      const updatedItem = {
+        ...item,
+        quant: item.quant + 1,
+      }
+      const updatedArray = [...cart]
+      updatedArray[index] = updatedItem
+      setCart(updatedArray)
+    } else {
+      const newItem = {
+        id: prop.id,
+        name: prop.name,
+        quant: 1,
+        price: prop.price,
+      }
+      setCart((prevState) => [...prevState, newItem])
+    }
   }
 
   const quantChange = (e, eID) => {
@@ -46,22 +54,6 @@ const WebShopContent = ({
     const updatedArray = [...cart]
     updatedArray[index] = updatedItem
     setCart(updatedArray)
-
-    /*
-    const newState = cart.find((item) => {
-      if (item.id === eID) {
-        return {
-          ...item,
-          [name]: numberValue,
-        }
-      }
-    })
-    console.log(newState)
-     setCart((prevState) => ({
-      ...prevState,
-      newState,
-    })) 
-    */
   }
 
   const deleteItem = (id) => {
@@ -117,28 +109,28 @@ const WebShopContent = ({
       {(listing === 'all' || listing === 'interior') && (
         <div className="itemBox">
           {interiorContent.map((item) => (
-            <Item item={item} key={item.id} />
+            <Item item={item} key={item.id} addToCart={addToCart} />
           ))}
         </div>
       )}
       {(listing === 'all' || listing === 'exterior') && (
         <div className="itemBox">
           {exteriorContent.map((item) => (
-            <Item item={item} key={item.id} />
+            <Item item={item} key={item.id} addToCart={addToCart} />
           ))}
         </div>
       )}
       {(listing === 'all' || listing === 'brushes') && (
         <div className="itemBox">
           {brushesContent.map((item) => (
-            <Item item={item} key={item.id} />
+            <Item item={item} key={item.id} addToCart={addToCart} />
           ))}
         </div>
       )}
       {(listing === 'all' || listing === 'machines') && (
         <div className="itemBox">
           {machinesContent.map((item) => (
-            <Item item={item} key={item.id} />
+            <Item item={item} key={item.id} addToCart={addToCart} />
           ))}
         </div>
       )}
