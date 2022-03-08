@@ -13,9 +13,7 @@ const ShowCart = ({ cart, quantChange, deleteItem, toggleCart }) => {
         </h2>
         {cart.map((item) => (
           <div className="cartListing" key={item.id}>
-            <div className="cartItem">
-              <div>{item.name}</div>
-            </div>
+            <div className="cartItem">{item.name}</div>
 
             <div className="cartPrice">
               <div>
