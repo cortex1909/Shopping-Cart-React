@@ -35,7 +35,7 @@ const Main = () => {
       <div className="slideshow">
         <ImageGallery items={images} />
       </div>
-      <Link to="/webshop">
+      <Link to="./webshop">
         <button className="webshopBtn bottom">Webshop</button>
       </Link>
     </main>

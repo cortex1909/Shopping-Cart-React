@@ -10,7 +10,7 @@ const Webshop = () => {
   const [machines, setMachines] = useState(null)
 
   useEffect(async () => {
-    await Promise.all([
+    /*     await Promise.all([
       fetch('http://localhost:3000/interior')
         .then((response) => response.json())
         .then((data) => setInterior(data)),
@@ -21,6 +21,21 @@ const Webshop = () => {
         .then((response) => response.json())
         .then((data) => setBrushes(data)),
       fetch('http://localhost:3000/machines')
+        .then((response) => response.json())
+        .then((data) => setMachines(data)),
+    ]) */
+
+    await Promise.all([
+      fetch('https://cortex-cart-database.herokuapp.com/interior')
+        .then((response) => response.json())
+        .then((data) => setInterior(data)),
+      fetch('https://cortex-cart-database.herokuapp.com/exterior')
+        .then((response) => response.json())
+        .then((data) => setExterior(data)),
+      fetch('https://cortex-cart-database.herokuapp.com/brushes')
+        .then((response) => response.json())
+        .then((data) => setBrushes(data)),
+      fetch('https://cortex-cart-database.herokuapp.com/machines')
         .then((response) => response.json())
         .then((data) => setMachines(data)),
     ])
