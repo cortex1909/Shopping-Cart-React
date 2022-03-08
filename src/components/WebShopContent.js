@@ -13,7 +13,7 @@ const WebShopContent = ({
 }) => {
   const [listing, setListing] = useState('all')
   const [cart, setCart] = useState([])
-  const [showCart, setshowCart] = useState(true)
+  const [showCart, setshowCart] = useState(false)
 
   const toggleListing = (listing) => {
     setListing(listing)

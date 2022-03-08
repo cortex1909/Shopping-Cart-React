@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 const Main = () => {
   const images = [
     {
-      original: './images/Image1.png',
+      original: './shopping-cart-react/images/Image1.png',
     },
     {
-      original: './images/Image2.png',
+      original: './shopping-cart-react/images/Image2.png',
     },
     {
-      original: './images/Image3.png',
+      original: './shopping-cart-react/images/Image3.png',
     },
   ]
 
